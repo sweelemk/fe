@@ -1,0 +1,20 @@
+@import "variables";
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: var(--text-color);
+  transition: color .3s ease;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--primary-color-hover);
+  }
+}

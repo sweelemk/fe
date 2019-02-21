@@ -1,0 +1,47 @@
+.form {
+  &-field {
+    margin-bottom: 30px;
+
+    &__column {
+      display: flex;
+      justify-content: space-between;
+
+      .form-field {
+        max-width: 45%;
+        flex-basis: 45%;
+      }
+    }
+
+    &__invalid {
+      .input {
+
+        &-element {
+          border-color: var(--error-color-light);
+        }
+
+        &-label {
+          color: var(--error-color-light)
+        }
+
+        &-border {
+          background-color: var(--error-color);
+        }
+      }
+    }
+
+    &__right {
+      text-align: right;
+    }
+
+    .radio {
+      &-group {
+        justify-content: space-between;
+      }
+
+      &-item {
+        max-width: 45%;
+        flex-basis: 45%;
+      }
+    }
+  }
+}

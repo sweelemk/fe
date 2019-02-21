@@ -1,0 +1,50 @@
+.input {
+  &-container {
+    height: 45px;
+    position: relative;
+  }
+
+  &-label {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    color: var(--grey-color);
+    pointer-events: none;
+    transition: top .3s ease, font-size .3s ease;
+    padding: 0 8px;
+  }
+
+  &-element {
+    border: 0;
+    height: 100%;
+    font-size: 16px;
+    border-bottom: 1px solid var(--grey-color);
+    width: 100%;
+    outline: 0;
+    font-family: Muller;
+    transition: border-color .3s ease;
+    padding: 0 8px;
+  }
+
+  &-border {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    transform: scale(0, 0);
+    transition: transform .3s ease;
+  }
+
+  &-active, &-element:focus {
+    & ~ .input-label {
+      top: -5px;
+      font-size: 12px;
+    }
+
+    & ~ .input-border {
+      transform: scale(1, 1);
+    }
+  }
+}

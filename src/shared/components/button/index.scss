@@ -1,0 +1,17 @@
+.btn {
+  background-color: var(--primary-color);
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-family: Muller;
+  height: 45px;
+  border-radius: 6px;
+  min-width: 180px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
+}
