@@ -53,6 +53,7 @@ export default class AutoSuggest extends PureComponent {
                         classNamePrefix='react-select'
                         isMulti
                         styles={ defaultSelectStyle }
+                        defaultMenuIsOpen={true}
                     />
                 </div>
             </Fragment>
