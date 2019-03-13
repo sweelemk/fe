@@ -13,6 +13,7 @@ class LoginPage extends PureComponent {
 
     onSubmit = (data) => {
         const { onLogIn } = this.props;
+        console.log(this.props);
         onLogIn(data);
     };
 

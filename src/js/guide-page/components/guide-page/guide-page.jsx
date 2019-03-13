@@ -7,6 +7,7 @@ import { logoStyle } from 'main/constants/page-constants';
 
 import { RadioGroup, Radio } from '../../../../shared/components/radio-button/radio-group';
 import AutoSuggest from '../../../../shared/components/input-autocomplete';
+import { Languages } from 'main/constants/page-constants';
 
 import './guide-page.scss';
 
@@ -69,7 +70,7 @@ class GuidePage extends Component {
                     <div className='guide-item'>
                         <div className='guide-title'>Auto suggest</div>
                         <div className='guide-example'>
-                            <AutoSuggest placeholder = 'Choose language'/>
+                            <AutoSuggest placeholder = 'Choose language' optionList={Languages}/>
                         </div>
                     </div>
                 </div>

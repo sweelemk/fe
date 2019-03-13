@@ -1,5 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React, { PureComponent } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import validator from 'validator';
@@ -10,6 +9,8 @@ import Input from '../../../../../shared/components/input';
 import Button from '../../../../../shared/components/button/button';
 import { RadioGroup, Radio } from '../../../../../shared/components/radio-button/radio-group';
 import { userTypes } from '../../../constants/auth-constants';
+import AutoSuggest from '../../../../../shared/components/input-autocomplete';
+import { Languages } from '../../../../main/constants/page-constants';
 
 export default class RegisterForm extends PureComponent {
 
@@ -48,6 +49,15 @@ export default class RegisterForm extends PureComponent {
             data: {
                 ...this.state.data,
                 userType: value
+            }
+        });
+    };
+
+    onSuggestChange = (value) => {
+        this.setState({
+            data: {
+                ...this.state.data,
+                languages: value
             }
         });
     };
@@ -125,6 +135,9 @@ export default class RegisterForm extends PureComponent {
                             ))
                         }
                     </RadioGroup>
+                </div>
+                <div className='form-field'>
+                    <AutoSuggest placeholder = 'Choose language' optionList={Languages} onSelected={this.onSuggestChange}/>
                 </div>
                 <div className='form-field'>
                     <Button type={ 'Submit' } value={ 'Sign up' }/>

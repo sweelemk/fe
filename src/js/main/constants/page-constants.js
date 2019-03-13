@@ -5,7 +5,7 @@ import GuidePage from 'guide-page/components/guide-page/guide-page';
 import TeachersPage from 'teachers-page/containers/teachers-container';
 import Authentication from 'authentication/components/authentication';
 import LoginPage from 'authentication/containers/login-page/login-container';
-import RegisterPage from 'authentication/components/register-page/register-page';
+import RegisterPage from 'authentication/containers/register-page/register-container';
 
 export default [
     {
@@ -76,4 +76,39 @@ export const defaultSelectStyle = {
     placeholder: () => ({}),
     singleValue: () => ({}),
     valueContainer: () => ({}),
-}
+};
+
+export const Languages = [
+    {
+        value: 'en',
+        label: 'English'
+    },
+    {
+        value: 'de',
+        label: 'German'
+    },
+    {
+        value: 'es',
+        label: 'Spanish'
+    },
+    {
+        value: 'it',
+        label: 'Italian'
+    },
+    {
+        value: 'ch',
+        label: 'Chinese'
+    },
+    {
+        value: 'blr',
+        label: 'Belorussian'
+    },
+    {
+        value: 'ru',
+        label: 'Russian'
+    },
+    {
+        value: 'fr',
+        label: 'French'
+    }
+];

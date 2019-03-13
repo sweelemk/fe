@@ -91,6 +91,8 @@
     width: 100%;
     z-index: 1;
     box-sizing: border-box;
+    max-height: 160px;
+    overflow-y: auto;
 
     &-list {
       margin: 10px 0;

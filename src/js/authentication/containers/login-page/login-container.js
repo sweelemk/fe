@@ -1,9 +1,7 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import LoginPage from 'authentication/components/login-page/login-page';
 
 import { loadCredentials } from 'authentication/actions/login-actions';
-
-
 
 export default connect(state => ({
     isCredentialLoadings: state.credentialsUser.get('isCredentialLoadings'),

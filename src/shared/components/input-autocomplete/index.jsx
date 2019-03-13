@@ -2,8 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Select from 'react-select';
-import { defaultSelectStyle} from 'main/constants/page-constants';
-// import ReactTags from 'react-tag-autocomplete';
+import { defaultSelectStyle } from 'main/constants/page-constants';
 import './index.scss';
 
 const options = [
@@ -14,11 +13,15 @@ const options = [
 
 export default class AutoSuggest extends PureComponent {
     static defaultProps = {
-        placeholder: ''
+        placeholder: '',
+        optionList: [],
+        onSelected: () => {}
     };
 
     static propTypes = {
         placeholder: PropTypes.string,
+        optionList: PropTypes.array,
+        onSelected: PropTypes.func
     };
 
     state = {
@@ -27,12 +30,13 @@ export default class AutoSuggest extends PureComponent {
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
+        this.props.onSelected(selectedOption);
     };
 
     render() {
-        const { placeholder } = this.props;
+        const { placeholder, optionList } = this.props;
         const { selectedOption } = this.state;
-        console.log(selectedOption);
+
         return (
             <Fragment>
                 <div className={ classNames(
@@ -41,19 +45,18 @@ export default class AutoSuggest extends PureComponent {
                     }
                 ) }>
                     <Select
-                        placeholder = { placeholder }
+                        placeholder={ placeholder }
                         value={ selectedOption }
                         onChange={ this.handleChange }
-                        options={ options }
-                        className={classNames(
+                        options={ optionList }
+                        className={ classNames(
                             'react-select-container', {
                                 'react-select-container__is-not-empty': selectedOption.length
                             }
-                        )}
+                        ) }
                         classNamePrefix='react-select'
                         isMulti
                         styles={ defaultSelectStyle }
-                        defaultMenuIsOpen={true}
                     />
                 </div>
             </Fragment>

@@ -1,16 +1,19 @@
 import React, { PureComponent, Fragment } from 'react';
+import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import RegisterForm from 'authentication/components/forms/register-form/register-form';
 import { Logo } from '../../../../icons/logo';
 import SignBG from '../../../../img/sign-bg.jpg';
-import { logoStyle} from 'main/constants/page-constants';
+import { logoStyle } from 'main/constants/page-constants';
 
 import '../sign.scss';
 
 
 class RegisterPage extends PureComponent {
+
     onSubmit = (data) => {
-        console.log(data);
+        const { onSignUp } = this.props;
+        onSignUp(data);
     };
 
     render() {
@@ -29,7 +32,7 @@ class RegisterPage extends PureComponent {
                                 your experience.
                             </div>
                             <div className='sign-form'>
-                                <RegisterForm submit={this.onSubmit}/>
+                                <RegisterForm submit={ this.onSubmit }/>
                             </div>
                             <div className='sign-account'>
                                 Have an account? <Link to={ '/authentication/login' }>Sing in</Link>
@@ -48,6 +51,8 @@ class RegisterPage extends PureComponent {
 
 }
 
-RegisterPage.propTypes = {};
+RegisterPage.propTypes = {
+    onSignUp: propTypes.func
+};
 
 export default RegisterPage;
